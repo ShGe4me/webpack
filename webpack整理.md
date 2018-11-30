@@ -13,7 +13,7 @@ webpack 是一个JavaScript 应用程序的静态模块打包器(static module b
 * 入口（entry）
 * 出口(output)
 * 解析规则(loader)
-* 插件(pulgins)
+* 插件(plugins)
 * devServer
 
 ## 安装
