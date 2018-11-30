@@ -24,7 +24,8 @@ yarn global add webpack webpack-cli
 然后就可以全局执行命令了
 webpack-cli 是使用 webpack 的命令行工具，在 4.x 版本之后不再作为 webpack 的依赖了，我们使用时需要单独安装这个工具。
 
-
+## 模式 mode
+development(开发模式)  production(生产模式)
 ## 入口 entry
 入口起点(entry point)指示 webpack 应该使用哪个模块，来作为构建其内部依赖图的开始，webpack 会找出有哪些模块和 library 是入口起点（直接和间接）依赖的。
 > 语法：
