@@ -131,6 +131,51 @@ babel-loader  url-laoder  css-loader style-loader  sass-loader less-loader postc
 除了编译任务外的其他任务
 
 
+## 模块查找规范
+webpack默认使用nodejs commonJs模块规范，但是也可以自定义一些解析规范
+- 如果写的是模块名称，会去node_modules目录下查找
+- 如果写的是相对路径（文件直接查找）（文件夹找文件夹下的package.json文件中main字段对应的文件，如果没有package，自动查找目录下的index文件）
+
+* resolve  配置模块如何解析
+* 参数
+* alias  配置别名
+```
+resolve: {
+ alias: {
+   '@': path.resolve(__dirname, './src')
+ }
+}
+```
+* extensions 自动解析确定的扩展（默认情况下只有js后缀可以被忽略不写，先在可以通过extensions字段进行配置可忽略的后缀）
+```
+resolve: {
+ extensions: ['.vue', '.json', '.js']
+}
+```
+* modules  默认情况下直接模块名称回去node_modules目录下查找，但是现在在webpack中可以使用modules字段配置模块目录
+```
+resolve: {
+ modules: ['node_modules', path.resolve(__dirname, './src/module')]
+}
+```
+
+
+## 环境区分
+在构建工具搭建的时候一般我们都需要区分环境，因为不同环境之间构建差异不一样，一般都需做开发环境和生产环境
+
+### 开发环境
+* 启动静态服务
+* 实时更新，热跟新
+* 文件编译
+* 需要调试
+* mock数据
+
+### 生产环境
+* 优化
+* 压缩
+* 不需要服务
+* 不需要热跟新
+* 需要文件分离
 
 
 
